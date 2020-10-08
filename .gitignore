@@ -1,0 +1,17 @@
+# -------------  Root .ignores  ------------ #
+!/CHANGELOG.md
+!/CONTRIBUTING.md
+!/CONTRIBUTORS.md
+!/.gitattributes
+!/.gitignore
+#/.htaccess
+!/LICENSE
+!/README.md
+!/RELEASENOTES.md
+!/TODO.md
+
+
+# -------------  JetBrains IDE  ------------ #
+/.idea/
+
+# ---------  Additional .ignores  ---------- #

@@ -1,0 +1,20 @@
+{
+  "name": "iods/module-bunyan",
+  "description": "A bigger, better logging manager for Magento 2.",
+  "require": {
+    "php": "~7.0|~7.1|~7.2|~7.3|~7.4"
+  },
+  "type": "magento2-module",
+  "version": "0.1.0",
+  "license": [
+    "MIT"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Iods\\Bunyan\\": ""
+    }
+  }
+}
