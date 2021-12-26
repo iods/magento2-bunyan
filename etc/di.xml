@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+ * Bigger, better logging manager for Magento 2
+ *
+ * @category  Iods
+ * @version   000.1.0
+ * @author    Rye Miller <rye@drkstr.dev>
+ * @copyright Copyright (c) 2021, Rye Miller (http://ryemiller.io)
+ * @license   MIT (https://en.wikipedia.org/wiki/MIT_License)
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Iods\Bunyan\Api\ConfigInterface"
+                type="Iods\Bunyan\Model\Config" />
+    <preference for="Iods\Bunyan\Api\TruncateTablesInterface"
+                type="Iods\Bunyan\Model\TruncateTables" />
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="Purge" xsi:type="object">Iods\Bunyan\Console\Command\Purge</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

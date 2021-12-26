@@ -15,3 +15,5 @@
 /.idea/
 
 # ---------  Additional .ignores  ---------- #
+/vendor/
+composer.lock
