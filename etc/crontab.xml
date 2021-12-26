@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+ * Bigger, better logging manager for Magento 2
+ *
+ * @category  Iods
+ * @version   000.1.0
+ * @author    Rye Miller <rye@drkstr.dev>
+ * @copyright Copyright (c) 2021, Rye Miller (http://ryemiller.io)
+ * @license   MIT (https://en.wikipedia.org/wiki/MIT_License)
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+
+    <group id="default">
+        <job instance="Iods\Bunyan\Cron\Purge"
+             method="execute"
+             name="iods_bunyan_logs_purge">
+            <config_path>crontab/default/jobs/iods_bunyan/schedule/purge</config_path>
+        </job>
+    </group>
+</config>

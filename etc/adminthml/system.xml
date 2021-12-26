@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+ * Bigger, better logging manager for Magento 2
+ *
+ * @category  Iods
+ * @version   000.1.0
+ * @author    Rye Miller <rye@drkstr.dev>
+ * @copyright Copyright (c) 2021, Rye Miller (http://ryemiller.io)
+ * @license   MIT (https://en.wikipedia.org/wiki/MIT_License)
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+
+    <system>
+        <section id="iods_bunyan" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
+            <label>Iods Logging (Bunyan)</label>
+            <tab>iods</tab>
+            <resource>Iods_Configs::settings</resource>
+            <group id="ip_authentication" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="5" translate="label,comment" type="text">
+                <label>Purge Logs</label>
+                <comment>
+                    Purge logs that are difficult to monitor and more difficult to remove.
+                    Automate them w/ a Cron Job.
+                </comment>
+                <field id="purge_cron" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+                    <label>Cron Job</label>
+                    <comment />
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="purge_frequency" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label" type="select">
+                    <label>Frequency</label>
+                    <source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
+                    <backend_model>Iods\Bunyan\Model\Config\Backend\Frequency</backend_model>
+                </field>
+                <field id="purge_time" showInDefault="1" showInStore="0" showInWebsite="0" sortOrder="10" translate="label" type="time">
+                    <label>Time</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
